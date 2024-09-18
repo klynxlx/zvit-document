@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Звіти з Лабораторних Робіт</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        header {
+            text-align: center;
+            margin-top: 10px;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
+        nav button {
+            margin: 5px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+        .sidebar {
+            width: 20%;
+            float: left;
+            padding: 10px;
+        }
+        .content {
+            width: 70%;
+            float: left;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        .footer {
+            clear: both;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .structure-section button {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #f7f7f7;
+            border: 1px solid #ccc;
+        }
+        .student-info {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .photo-student {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+        .theme-purpose {
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+        }
+        .theme-purpose h3 {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ЗВІТИ З ЛАБОРАТОРНИХ РОБІТ</h1>
+        <h3>З ДИСЦИПЛІНИ "ІНТЕРНЕТ-ТЕХНОЛОГІЇ ТА ПРОЄКТУВАННЯ WEB-ЗАСТОСУВАНЬ"</h3>
+    </header>
+
+    <nav>
+        <button>Лабораторна робота №1</button>
+        <button>Лабораторна робота №2</button>
+        <button>Лабораторна робота №3</button>
+        <button>Лабораторна робота №4</button>
+        <button>Лабораторна робота №5</button>
+        <button>Лабораторна робота №6</button>
+        <button>Лабораторна робота №7</button>
+        <button>Лабораторна робота №8</button>
+        <button>Лабораторна робота №9</button>
+    </nav>
+
+    <div class="sidebar">
+        <button>Опис предметного середовища</button>
+        <button>Тема Мета Місце</button>
+        <div class="structure-section">
+            <h4>СТРУКТУРА ДОКУМЕНТА</h4>
+            <button>HTML-код ТАБЛИЦЬ</button>
+            <button>HTML-код ФОРМИ</button>
+            <button>HTML-код ЗОБРАЖЕННЯ</button>
+        </div>
+        <button>ВИСНОВКИ</button>
+    </div>
+
+    <div class="content">
+        <div class="theme-purpose">
+            <h3>Тема: Каталог фільмів і серіалів</h3>
+            <p>Мета: Каталог дозволяє користувачам шукати фільми та серіали, переглядати інформацію про них, створювати власні списки. Перегляд списку доступних фільмів та серіалів.</p>
+        </div>
+
+        <h3>Місце виведення інформації</h3>
+        <p>Тут буде виводитись інформація, обрана користувачем.</p>
+    </div>
+
+    <div class="photo-student">
+        <p>ФОТО СТУДЕНТА</p>
+        <img src="student_photo.png" alt="Фото студента" width="100">
+    </div>
+
+    <div class="student-info">
+        <p>Студенти групи _______</p>
+        <p>Іванов Іван Іванович</p>
+    </div>
+
+    <footer class="footer">
+        <p>© Лабораторні роботи з Інтернет-технологій</p>
+    </footer>
+</body>
+</html>
