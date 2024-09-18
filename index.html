@@ -3,125 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Звіти з Лабораторних Робіт</title>
+    <title>Звіти з лабораторних робіт</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-        }
-        header {
-            text-align: center;
-            margin-top: 10px;
-        }
-        nav {
+            margin: 0;
+            padding: 0;
             display: flex;
             justify-content: center;
-            margin: 10px 0;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f5f5f5;
         }
-        nav button {
-            margin: 5px;
+        .container {
+            width: 80%;
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .nav-buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        .nav-buttons button {
             padding: 10px;
             background-color: #f0f0f0;
             border: 1px solid #ccc;
             cursor: pointer;
+            font-size: 16px;
         }
-        .sidebar {
-            width: 20%;
-            float: left;
-            padding: 10px;
+        .nav-buttons button:hover {
+            background-color: #ddd;
         }
         .content {
-            width: 70%;
-            float: left;
+            display: flex;
+        }
+        .menu {
+            width: 30%;
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
             padding: 10px;
-            border: 1px solid #ccc;
         }
-        .footer {
-            clear: both;
-            text-align: center;
-            margin-top: 20px;
-        }
-        .structure-section button {
-            display: block;
+        .menu button {
             width: 100%;
-            margin-bottom: 10px;
             padding: 10px;
-            background-color: #f7f7f7;
+            margin: 5px 0;
+            background-color: #e7e7e7;
             border: 1px solid #ccc;
+            cursor: pointer;
+            text-align: left;
         }
-        .student-info {
-            text-align: center;
-            margin-top: 50px;
+        .menu button:hover {
+            background-color: #ddd;
         }
-        .photo-student {
-            position: absolute;
-            top: 20px;
-            right: 20px;
+        .output {
+            width: 70%;
+            padding: 20px;
             border: 1px solid #ccc;
-            padding: 10px;
-            text-align: center;
-        }
-        .theme-purpose {
-            padding: 10px;
-            border: 1px solid #ccc;
-            margin-bottom: 20px;
-        }
-        .theme-purpose h3 {
-            margin-bottom: 10px;
+            background-color: #fff;
         }
     </style>
 </head>
 <body>
-    <header>
+    <div class="container">
         <h1>ЗВІТИ З ЛАБОРАТОРНИХ РОБІТ</h1>
-        <h3>З ДИСЦИПЛІНИ "ІНТЕРНЕТ-ТЕХНОЛОГІЇ ТА ПРОЄКТУВАННЯ WEB-ЗАСТОСУВАНЬ"</h3>
-    </header>
+        <h2>З ДИСЦИПЛІНИ "ІНТЕРНЕТ-ТЕХНОЛОГІЇ ТА ПРОЕКТУВАННЯ WEB-ЗАСТОСУВАНЬ"<br>Студентки групи ІС-32 Лінник Катерини Сергіївни</h2>
 
-    <nav>
-        <button>Лабораторна робота №1</button>
-        <button>Лабораторна робота №2</button>
-        <button>Лабораторна робота №3</button>
-        <button>Лабораторна робота №4</button>
-        <button>Лабораторна робота №5</button>
-        <button>Лабораторна робота №6</button>
-        <button>Лабораторна робота №7</button>
-        <button>Лабораторна робота №8</button>
-        <button>Лабораторна робота №9</button>
-    </nav>
-
-    <div class="sidebar">
-        <button>Опис предметного середовища</button>
-        <button>Тема Мета Місце</button>
-        <div class="structure-section">
-            <h4>СТРУКТУРА ДОКУМЕНТА</h4>
-            <button>HTML-код ТАБЛИЦЬ</button>
-            <button>HTML-код ФОРМИ</button>
-            <button>HTML-код ЗОБРАЖЕННЯ</button>
-        </div>
-        <button>ВИСНОВКИ</button>
-    </div>
-
-    <div class="content">
-        <div class="theme-purpose">
-            <h3>Тема: Каталог фільмів і серіалів</h3>
-            <p>Мета: Каталог дозволяє користувачам шукати фільми та серіали, переглядати інформацію про них, створювати власні списки. Перегляд списку доступних фільмів та серіалів.</p>
+        <div class="nav-buttons">
+            <button>Лабораторна робота №1</button>
+            <button>Лабораторна робота №2</button>
+            <button>Лабораторна робота №3</button>
+            <button>Лабораторна робота №4</button>
+            <button>Лабораторна робота №5</button>
+            <button>Лабораторна робота №6</button>
+            <button>Лабораторна робота №7</button>
+            <button>Лабораторна робота №8</button>
+            <button>Лабораторна робота №9</button>
         </div>
 
-        <h3>Місце виведення інформації</h3>
-        <p>Тут буде виводитись інформація, обрана користувачем.</p>
+        <div class="content">
+            <div class="menu">
+                <button>Опис предметного середовища</button>
+                <button>Тема Мета Місце розташування ЛР №1</button>
+                <button>Структура документа</button>
+                <button>HTML-код таблиць</button>
+                <button>HTML-код списку</button>
+                <button>HTML-код зображення</button>
+                <button>Висновки</button>
+            </div>
+            <div class="output">
+                <p>Місце виведення інформації</p>
+            </div>
+        </div>
     </div>
-
-    <div class="photo-student">
-        <p>ФОТО СТУДЕНТА</p>
-        <img src="./images/photo_2024-09-18_12-08-26.jpg" alt="Фото студента" width="100">
-    </div>
-
-    <div class="student-info">
-        <p>Студентка групи ІС-32</p>
-        <p>Лінник Катерина Сергіївна</p>
-    </div>
-
-    <footer class="footer">
-        <p>© Лабораторні роботи з Інтернет-технологій</p>
-    </footer>
 </body>
 </html>
