@@ -14,6 +14,7 @@
             align-items: center;
             min-height: 100vh;
             background-color: #f5f5f5;
+            position: relative;
         }
         .container {
             width: 80%;
@@ -67,25 +68,35 @@
             border: 1px solid #ccc;
             background-color: #fff;
         }
-        .top-right-image {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 110px; /* Ширина зображення */
-    height: 160px; /* Висота зображення */
-    object-fit: cover; /* Щоб зображення заповнило прямокутник без деформації */
-}
-
+        /* Стиль для фотографії */
+        .photo {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 100px; /* Ширина фотографії */
+            height: 100px; /* Висота фотографії */
+            border-radius: 50%; /* Закруглення країв для форми кола */
+            overflow: hidden;
+        }
+        .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Забезпечує, щоб зображення повністю заповнювало круглу область */
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="./images/photo_2024-09-18_12-08-26.jpg" alt="Зображення" class="top-right-image">
+        <!-- Фотографія в правому верхньому куті -->
+        <div class="photo">
+            <img src="./images/photo_2024-09-18_12-08-26.jpg" alt="Фотографія">
+        </div>
+
         <h1>ЗВІТИ З ЛАБОРАТОРНИХ РОБІТ</h1>
         <h2>З ДИСЦИПЛІНИ "ІНТЕРНЕТ-ТЕХНОЛОГІЇ ТА ПРОЕКТУВАННЯ WEB-ЗАСТОСУВАНЬ"<br>Студентки групи ІС-32 Лінник Катерини Сергіївни</h2>
 
         <div class="nav-buttons">
-            <button>Лабораторна робота №1</button>
+            <button onclick="goToLab1()">Лабораторна робота №1</button>
             <button>Лабораторна робота №2</button>
             <button>Лабораторна робота №3</button>
             <button>Лабораторна робота №4</button>
@@ -98,18 +109,68 @@
 
         <div class="content">
             <div class="menu">
-                <button>Опис предметного середовища</button>
-                <button>Тема Мета Місце розташування ЛР №1</button>
+                <button onclick="toggleDescription()">Опис предметного середовища</button>
+                <button onclick="showTopicDetails()">Тема Мета Місце розташування ЛР №1</button>
                 <button>Структура документа</button>
                 <button>HTML-код таблиць</button>
                 <button>HTML-код списку</button>
-                <button>HTML-код зображення</button>
+                <button onclick="showImage()">HTML-код зображення</button>
                 <button>Висновки</button>
             </div>
-            <div class="output">
+            <div class="output" id="output">
                 <p>Місце виведення інформації</p>
             </div>
         </div>
     </div>
+
+    <script>
+        function toggleDescription() {
+            var outputDiv = document.getElementById("output");
+            var currentContent = outputDiv.innerHTML.trim();
+            var description = `
+                <p>Каталог фільмів і серіалів<br>
+                Цей каталог дозволяє користувачам шукати фільми та серіали, переглядати інформацію про них, створювати власні списки.<br>
+                Перегляд списку доступних фільмів та серіалів.<br>
+                Сторінка фільму/серіалу<br><br>
+                <strong>Опис фільму:</strong> короткий сюжет, режисер, актори, тривалість.<br>
+                <strong>Оцінки та відгуки користувачів.</strong><br>
+                <strong>Трейлер та постер.</strong><br><br>
+                Створення користувацьких списків ("Хочу подивитися", "Переглянуті").</p>
+            `;
+
+            if (currentContent === '<p>Місце виведення інформації</p>' || currentContent === '') {
+                outputDiv.innerHTML = description;
+            } else {
+                outputDiv.innerHTML = '<p>Місце виведення інформації</p>';
+            }
+        }
+
+        function goToLab1() {
+            window.location.href = "https://klynxlx.github.io/linnyk_lab1/";
+        }
+
+        function showTopicDetails() {
+            var outputDiv = document.getElementById("output");
+            var topicDetails = `
+                <p><strong>Тема:</strong> СТРУКТУРА HTML-ДОКУМЕНТА. ВИБІР ПРЕДМЕТНОЇ ГАЛУЗІ.<br>
+                РОБОТА З ПОСИЛАННЯМИ, ТАБЛИЦЯМИ, ЗОБРАЖЕННЯМИ, СПИСКАМИ в HTML-ДОКУМЕНТІ.<br><br>
+                <strong>Мета:</strong> придбати практичні навички роботи з HTML-документом, таблицями, зображеннями, посиланнями, списками, формами.<br>
+                Створити шаблон звітного HTML-документу для відображення результатів роботи всіх лабораторних робіт.<br><br>
+                <strong>Місце розташування:</strong> <a href="https://github.com/klynxlx/linnyk_lab1" target="_blank">https://github.com/klynxlx/linnyk_lab1</a></p>
+            `;
+            outputDiv.innerHTML = topicDetails;
+        }
+
+        function showImage() {
+            var outputDiv = document.getElementById("output");
+            var imageHtml = `
+                <img src="./images/photo_2024-09-20_12-46-05.jpg" alt="Фотографія">
+                
+            `;
+            outputDiv.innerHTML = imageHtml;
+        }
+    </script>
 </body>
 </html>
+
+
