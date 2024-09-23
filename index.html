@@ -75,7 +75,7 @@
             right: 20px;
             width: 100px; /* Ширина фотографії */
             height: 100px; /* Висота фотографії */
-            border-radius: 50%; /* Закруглення країв для форми кола */
+            border-radius: 10%; /* Закруглення країв для форми кола */
             overflow: hidden;
         }
         .photo img {
@@ -111,11 +111,10 @@
             <div class="menu">
                 <button onclick="toggleDescription()">Опис предметного середовища</button>
                 <button onclick="showTopicDetails()">Тема Мета Місце розташування ЛР №1</button>
-                <button>Структура документа</button>
-                <button>HTML-код таблиць</button>
-                <button>HTML-код списку</button>
+                <button onclick="showTableCode()">HTML-код таблиць</button>
+                <button onclick="showListCode()">HTML-код списку</button>
                 <button onclick="showImage()">HTML-код зображення</button>
-                <button>Висновки</button>
+                <button onclick="showConclusion()">Висновки</button>
             </div>
             <div class="output" id="output">
                 <p>Місце виведення інформації</p>
@@ -128,15 +127,32 @@
             var outputDiv = document.getElementById("output");
             var currentContent = outputDiv.innerHTML.trim();
             var description = `
-                <p>Каталог фільмів і серіалів<br>
-                Цей каталог дозволяє користувачам шукати фільми та серіали, переглядати інформацію про них, створювати власні списки.<br>
-                Перегляд списку доступних фільмів та серіалів.<br>
-                Сторінка фільму/серіалу<br><br>
-                <strong>Опис фільму:</strong> короткий сюжет, режисер, актори, тривалість.<br>
-                <strong>Оцінки та відгуки користувачів.</strong><br>
-                <strong>Трейлер та постер.</strong><br><br>
-                Створення користувацьких списків ("Хочу подивитися", "Переглянуті").</p>
-            `;
+                <p><strong>Опис предметного середовища для проєкту сайту для перегляду фільмів та серіалів</strong></p>
+                <p><strong>Тема:</strong><br>
+                Створення веб-сайту для перегляду популярних фільмів та серіалів онлайн з можливістю сортування за категоріями, пошуку контенту та отримання інформації про кожен фільм або серіал.</p>
+
+                <p><strong>Мета:</strong><br>
+                Розробити інтерактивний веб-сайт, де користувачі зможуть переглядати популярні фільми та серіали онлайн, дізнаватися більше про кожен контент (опис, жанр, рік випуску), а також використовувати різні фільтри та категорії для зручного пошуку. Сайт повинен мати простий і зручний інтерфейс, який адаптується до різних типів пристроїв (десктопів, планшетів, смартфонів).</p>
+
+                <p><strong>Опис бізнес-логіки:</strong></p>
+                <ul>
+                    <li>Контент (фільми та серіали): Сайт показує користувачам список популярних фільмів та серіалів. Кожен фільм/серіал має постер, назву, рік випуску та жанр.</li>
+                    <li>Категорії: Фільми та серіали поділені на жанрові категорії.</li>
+                    <li>Пошук: Сайт надає можливість пошуку контенту за назвою.</li>
+                    <li>Список популярного контенту: Відображаються найпопулярніші фільми та серіали.</li>
+                    <li>Підтримка користувачів: Сайт надає технічну підтримку та посилання на FAQ.</li>
+                </ul>
+
+                <p><strong>Сценарій користування:</strong></p>
+                <ol>
+                    <li>Користувач заходить на сайт і бачить категорії популярних фільмів та серіалів.</li>
+                    <li>Користувач може натиснути на постер фільму/серіалу для перегляду детальної інформації.</li>
+                    <li>Функція пошуку дозволяє знайти конкретний фільм або серіал за назвою.</li>
+                    <li>Користувач може сортувати контент за категоріями, як-от: Фантастика, Драма тощо.</li>
+                    <li>Користувач може звернутися до підтримки або переглянути FAQ.</li>
+                </ol>
+            `
+            
 
             if (currentContent === '<p>Місце виведення інформації</p>' || currentContent === '') {
                 outputDiv.innerHTML = description;
@@ -156,21 +172,67 @@
                 РОБОТА З ПОСИЛАННЯМИ, ТАБЛИЦЯМИ, ЗОБРАЖЕННЯМИ, СПИСКАМИ в HTML-ДОКУМЕНТІ.<br><br>
                 <strong>Мета:</strong> придбати практичні навички роботи з HTML-документом, таблицями, зображеннями, посиланнями, списками, формами.<br>
                 Створити шаблон звітного HTML-документу для відображення результатів роботи всіх лабораторних робіт.<br><br>
-                <strong>Місце розташування:</strong> <a href="https://github.com/klynxlx/linnyk_lab1" target="_blank">https://github.com/klynxlx/linnyk_lab1</a></p>
+                <strong>Місце розташування:</strong> <a href="https://github.com/klynxlx/linnyk_lab1" target="_blank">посилання на репозиторій веб застосунка</a><br>
+                <a href="https://klynxlx.github.io/linnyk_lab1/" target="_blank">посилання на живу сторінку веб-застосунка</a><br>
+                <a href="https://github.com/klynxlx/Linnyk_Katya_IndependentWork" target="_blank">посилання на репозиторій самостійної роботи</a><br>
+                <a href="https://klynxlx.github.io/Linnyk_Katya_IndependentWork/" target="_blank">посилання на живу сторінку самостійної роботи</a>
             `;
             outputDiv.innerHTML = topicDetails;
         }
 
+        function showTableCode() {
+            var outputDiv = document.getElementById("output");
+            var tableCode = `
+                <pre><code>&lt;table border="1"&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Назва&lt;/th&gt;
+        &lt;th&gt;Рік&lt;/th&gt;
+        &lt;th&gt;Жанр&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Фільм 1&lt;/td&gt;
+        &lt;td&gt;2020&lt;/td&gt;
+        &lt;td&gt;Драма&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Фільм 2&lt;/td&gt;
+        &lt;td&gt;2021&lt;/td&gt;
+        &lt;td&gt;Комедія&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+            `;
+            outputDiv.innerHTML = tableCode;
+        }
+
+        function showListCode() {
+            var outputDiv = document.getElementById("output");
+            var listCode = `
+                <pre><code>&lt;ul&gt;
+    &lt;li&gt;Пункт 1&lt;/li&gt;
+    &lt;li&gt;Пункт 2&lt;/li&gt;
+    &lt;li&gt;Пункт 3&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+            `;
+            outputDiv.innerHTML = listCode;
+        }
+
         function showImage() {
             var outputDiv = document.getElementById("output");
-            var imageHtml = `
-                <img src="./images/photo_2024-09-20_12-46-05.jpg" alt="Фотографія">
-                
+            var imageCode = `
+                <pre><code>&lt;img src="image.jpg" alt="Опис зображення" width="500" height="300"&gt;</code></pre>
             `;
-            outputDiv.innerHTML = imageHtml;
+            outputDiv.innerHTML = imageCode;
+        }
+
+        function showConclusion() {
+            var outputDiv = document.getElementById("output");
+            var conclusion = `
+                <p>При виконанні цієї лабораторної роботи я придбала практичні навички роботи з HTML-документом, таблицями, зображеннями, посиланнями, списками, формами.<br>
+                Також створила шаблон звітного HTML-документу для відображення результатів роботи всіх лабораторних робіт.</p>
+            `;
+            outputDiv.innerHTML = conclusion;
         }
     </script>
 </body>
 </html>
-
 
