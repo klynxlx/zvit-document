@@ -73,21 +73,20 @@
             position: absolute;
             top: 20px;
             right: 20px;
-            width: 100px; /* Ширина фотографії */
-            height: 100px; /* Висота фотографії */
-            border-radius: 10%; /* Закруглення країв для форми кола */
+            width: 100px;
+            height: 100px;
+            border-radius: 10%;
             overflow: hidden;
         }
         .photo img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Забезпечує, щоб зображення повністю заповнювало круглу область */
+            object-fit: cover;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Фотографія в правому верхньому куті -->
         <div class="photo">
             <img src="./images/photo_2024-09-18_12-08-26.jpg" alt="Фотографія">
         </div>
@@ -96,8 +95,8 @@
         <h2>З ДИСЦИПЛІНИ "ІНТЕРНЕТ-ТЕХНОЛОГІЇ ТА ПРОЕКТУВАННЯ WEB-ЗАСТОСУВАНЬ"<br>Студентки групи ІС-32 Лінник Катерини Сергіївни</h2>
 
         <div class="nav-buttons">
-            <button onclick="goToLab1()">Лабораторна робота №1</button>
-            <button>Лабораторна робота №2</button>
+            <button onclick="showLab1()">Лабораторна робота №1</button>
+            <button onclick="showLab2()">Лабораторна робота №2</button>
             <button>Лабораторна робота №3</button>
             <button>Лабораторна робота №4</button>
             <button>Лабораторна робота №5</button>
@@ -108,13 +107,15 @@
         </div>
 
         <div class="content">
-            <div class="menu">
+            <div class="menu" id="menu">
+                <!-- Початкове меню для ЛР №1 -->
                 <button onclick="toggleDescription()">Опис предметного середовища</button>
                 <button onclick="showTopicDetails()">Тема Мета Місце розташування ЛР №1</button>
                 <button onclick="showTableCode()">HTML-код таблиць</button>
                 <button onclick="showListCode()">HTML-код списку</button>
                 <button onclick="showImage()">HTML-код зображення</button>
                 <button onclick="showConclusion()">Висновки</button>
+                
             </div>
             <div class="output" id="output">
                 <p>Місце виведення інформації</p>
@@ -123,6 +124,35 @@
     </div>
 
     <script>
+        // Показати меню для ЛР №1
+        function showLab1() {
+            var menu = document.getElementById("menu");
+            menu.innerHTML = `
+                <button onclick="toggleDescription()">Опис предметного середовища</button>
+                <button onclick="showTopicDetails()">Тема Мета Місце розташування ЛР №1</button>
+                <button onclick="showTableCode()">HTML-код таблиць</button>
+                <button onclick="showListCode()">HTML-код списку</button>
+                <button onclick="showImage()">HTML-код зображення</button>
+                <button onclick="showConclusion()">Висновки</button>
+            `;
+        }
+
+        // Показати меню для ЛР №2
+        function showLab2() {
+            var menu = document.getElementById("menu");
+            menu.innerHTML = `
+                <button onclick="showDetails()">Тема, мета ЛР №2 Місце розташування сайту, звіту</button>
+                <button>Способи підключення стилів</button>
+                <button>СЕЛЕКТОРИ</button>
+                <button onclick="showTagSelector()">Селектори тегу</button>
+                <button onclick="showClassSelector()">Селектори класу</button>
+                <button onclick = "showIDSelector()">Селектори ідентифікаторів</button>
+                <button onclick = "showOtherSelector()">Інші селектори</button>
+                <button onclick = "showCSS()">CSS: Шрифти, текст, таблиці, фон, контур</button>
+                <button onclick = "showConclusion2()">ВИСНОВКИ до ЛР №2</button>
+            `;
+        }
+
         function toggleDescription() {
             var outputDiv = document.getElementById("output");
             var currentContent = outputDiv.innerHTML.trim();
@@ -151,18 +181,12 @@
                     <li>Користувач може сортувати контент за категоріями, як-от: Фантастика, Драма тощо.</li>
                     <li>Користувач може звернутися до підтримки або переглянути FAQ.</li>
                 </ol>
-            `
-            
-
+            `;
             if (currentContent === '<p>Місце виведення інформації</p>' || currentContent === '') {
                 outputDiv.innerHTML = description;
             } else {
                 outputDiv.innerHTML = '<p>Місце виведення інформації</p>';
             }
-        }
-
-        function goToLab1() {
-            window.location.href = "https://klynxlx.github.io/linnyk_lab1/";
         }
 
         function showTopicDetails() {
@@ -183,23 +207,8 @@
         function showTableCode() {
             var outputDiv = document.getElementById("output");
             var tableCode = `
-                <pre><code>&lt;table border="1"&gt;
-    &lt;tr&gt;
-        &lt;th&gt;Назва&lt;/th&gt;
-        &lt;th&gt;Рік&lt;/th&gt;
-        &lt;th&gt;Жанр&lt;/th&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;Фільм 1&lt;/td&gt;
-        &lt;td&gt;2020&lt;/td&gt;
-        &lt;td&gt;Драма&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;Фільм 2&lt;/td&gt;
-        &lt;td&gt;2021&lt;/td&gt;
-        &lt;td&gt;Комедія&lt;/td&gt;
-    &lt;/tr&gt;
-&lt;/table&gt;</code></pre>
+               <img src="./images/photo_2024-09-26_19-01-49.jpg" alt="Placeholder Image" width="300">
+               <img src="./images/photo_2024-09-26_19-01-59.jpg" alt="Placeholder Image" width="1000">
             `;
             outputDiv.innerHTML = tableCode;
         }
@@ -207,28 +216,115 @@
         function showListCode() {
             var outputDiv = document.getElementById("output");
             var listCode = `
-                <pre><code>&lt;ul&gt;
-    &lt;li&gt;Пункт 1&lt;/li&gt;
-    &lt;li&gt;Пункт 2&lt;/li&gt;
-    &lt;li&gt;Пункт 3&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
+            <img src="./images/photo_2024-09-26_19-05-50.jpg" alt="Placeholder Image" width="300">
+               <img src="./images/photo_2024-09-26_19-05-55.jpg" alt="Placeholder Image" width="300">
             `;
             outputDiv.innerHTML = listCode;
         }
 
         function showImage() {
             var outputDiv = document.getElementById("output");
-            var imageCode = `
-                <pre><code>&lt;img src="image.jpg" alt="Опис зображення" width="500" height="300"&gt;</code></pre>
+            var imageHtml = `
+                <img src="./images/photo_2024-09-20_12-46-05.jpg" alt="Placeholder Image" width="300">
+                <p>Це приклад зображення.</p>
             `;
-            outputDiv.innerHTML = imageCode;
+            outputDiv.innerHTML = imageHtml;
         }
+
 
         function showConclusion() {
             var outputDiv = document.getElementById("output");
             var conclusion = `
-                <p>При виконанні цієї лабораторної роботи я придбала практичні навички роботи з HTML-документом, таблицями, зображеннями, посиланнями, списками, формами.<br>
-                Також створила шаблон звітного HTML-документу для відображення результатів роботи всіх лабораторних робіт.</p>
+                <p><strong>Висновок:</strong> Під час виконання ЛР №1 я набула практичних навичок зі створення структури HTML-документу та роботи з таблицями, списками, зображеннями.</p>
+            `;
+            outputDiv.innerHTML = conclusion;
+        }
+
+
+        function showDetails() {
+            var outputDiv = document.getElementById("output");
+            outputDiv.innerHTML = `
+        <p><strong>Тема:</strong> КАСКАДНІ ТАБЛИЦІ СТИЛІВ. СЕЛЕКТОРИ .ІДЕНТИФІКАТОРИ. СТИЛЬОВЕ ОФОРМЛЕННЯ ТЕКСТОВИХ ЕЛЕМЕНТІВ В HTML-ДОКУМЕНТАХ.</p>
+        <p><strong>Мета:</strong> придбати практичні навички роботи з селекторами, ідентифікаторами, списками, різноманітними властивостями кольору і фону, зовнішними та внутрішними відступами, плаваючими елементами, оформленням текстових елементів.</p>
+        <p><strong>Місце розташування:</strong></p>
+        <ul>
+            <li><a href="https://github.com/klynxlx/linnyk_lab2">Посилання на репозиторій лабораторної роботи №2</a></li>
+            <li><a href="https://klynxlx.github.io/linnyk_lab2/">Посилання на живу сторінку лабораторної роботи №2</a></li>
+            <li><a href="https://github.com/klynxlx/linnyk_independent2">Посилання на репозиторій самостійної роботи №2</a></li>
+            <li><a href="https://klynxlx.github.io/linnyk_independent2/">Посилання на живу сторінку самостійної роботи №2</a></li>
+            <li><a href="https://github.com/klynxlx/zvit-document">Посилання на репозиторій звітного HTML документу</a></li>
+        </ul>
+    `;
+    
+}
+
+function showTagSelector() {
+    var outputDiv = document.getElementById("output");
+    outputDiv.innerHTML = `
+                <img src="./images/photo_2024-09-26_21-39-36.jpg" alt="Placeholder Image" width="700">
+                <p>селектор тегу</p>
+            `;
+}
+
+
+function showClassSelector() {
+    var outputDiv = document.getElementById("output");
+    outputDiv.innerHTML = `
+                <img src="./images/photo_2024-09-26_20-57-06.jpg" alt="Placeholder Image" width="300">
+                <p>Це приклад зображення.</p>
+            `;
+}
+
+function showIDSelector() {
+    var outputDiv = document.getElementById("output");
+    outputDiv.innerHTML = `
+                <img src="./images/photo_2024-09-26_22-04-13.jpg" alt="Placeholder Image" width="700">
+                <img src="./images/photo_2024-09-26_22-04-20.jpg" alt="Placeholder Image" width="700">
+                <p>Cелектори ідентифікаторів.</p>
+            `;
+}
+function showOtherSelector() {
+    var outputDiv = document.getElementById("output");
+    outputDiv.innerHTML = `
+                <img src="./images/photo_2024-09-26_22-08-01.jpg" alt="Placeholder Image" width="700">
+                <p> селектори нащадків.</p>
+
+
+                <img src="./images/photo_2024-09-26_22-09-54.jpg" alt="Placeholder Image" width="700">
+                <img src="./images/photo_2024-09-26_22-13-27.jpg" alt="Placeholder Image" width="700">
+                <p> селектор групування.</p>
+            `;
+}
+
+function showCSS() {
+    var outputDiv = document.getElementById("output");
+    outputDiv.innerHTML = `
+                <p> шрифти.</p> 
+                <img src="./images/шрифти.jpg" alt="шрифти" width="700">
+                
+                <p> контури.</p> 
+                <img src="./images/контури.jpg" alt="Placeholder Image" width="700">
+
+                <p> фон.</p> 
+                <img src="./images/фон.jpg" alt="Placeholder Image" width="700">
+                
+                <p> колір тексту.</p>
+                <img src="./images/колір тексту.jpg" alt="Placeholder Image" width="700">
+
+                <p> CSS-властивості для таблиць.</p>
+                <img src="./images/table.jpg" alt="Placeholder Image" width="700">
+
+                <p> CSS просунутий.</p>
+                <img src="./images/photo_2024-09-26_23-17-20.jpg" alt="Placeholder Image" width="700">
+                <img src="./images/css2.jpg" alt="Placeholder Image" width="700">
+               
+            `;
+}
+
+function showConclusion2() {
+            var outputDiv = document.getElementById("output");
+            var conclusion = `
+                <p><strong>Висновок:</strong> Під час виконання ЛР №2 я придбала практичні навички роботи  з селекторами, ідентифікаторами, списками,  різноманітними властивостями кольору і фону,  зовнішними та внутрішними  відступами,  плаваючими елементами, оформленням текстових елементів</p>
             `;
             outputDiv.innerHTML = conclusion;
         }
