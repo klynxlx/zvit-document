@@ -142,7 +142,7 @@
             var menu = document.getElementById("menu");
             menu.innerHTML = `
                 <button onclick="showDetails()">Тема, мета ЛР №2 Місце розташування сайту, звіту</button>
-                <button>Способи підключення стилів</button>
+                <button onclick = "showStyles()">Способи підключення стилів</button>
                 <button>СЕЛЕКТОРИ</button>
                 <button onclick="showTagSelector()">Селектори тегу</button>
                 <button onclick="showClassSelector()">Селектори класу</button>
@@ -257,11 +257,26 @@
     `;
     
 }
+function showStyles() {
+    var outputDiv = document.getElementById("output");
+    outputDiv.innerHTML = `
+                <p><strong>Вбудований стиль (Inline CSS)<p>
+                <p>Стилі додаються безпосередньо в тег HTML за допомогою атрибута style.</p>
+                <img src="./images/image.png" alt="Placeholder Image" width="700">   
+                <p><strong>Внутрішній стиль (Internal CSS)<p>   
+                <p>Стилі додаються у секцію style всередині елемента head HTML-документа.</p>      
+                <img src="./images/s.jpg" alt="Placeholder Image" width="300"> 
+                <p><strong>Зовнішній стиль (External CSS)<p> 
+                <p>Стилі зберігаються в окремому файлі з розширенням .css, який підключається до HTML-документа за допомогою тега link.head HTML-документа.</p>  
+                <img src="./images/ss.jpg" alt="Placeholder Image" width="700"> 
 
+            `;
+}
 function showTagSelector() {
     var outputDiv = document.getElementById("output");
     outputDiv.innerHTML = `
                 <img src="./images/photo_2024-09-26_21-39-36.jpg" alt="Placeholder Image" width="700">
+                <img src="./images/tag.jpg" alt="Placeholder Image" width="700">
                 <p>селектор тегу</p>
             `;
 }
@@ -271,7 +286,7 @@ function showClassSelector() {
     var outputDiv = document.getElementById("output");
     outputDiv.innerHTML = `
                 <img src="./images/photo_2024-09-26_20-57-06.jpg" alt="Placeholder Image" width="300">
-                <p>Це приклад зображення.</p>
+              <img src="./images/class.jpg" alt="Placeholder Image" width="700">
             `;
 }
 
