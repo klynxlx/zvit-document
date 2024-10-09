@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Звіти з лабораторних робіт</title>
+    <title>Лабораторна робота №1</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -29,10 +29,20 @@
 
         <div class="content">
             <div class="menu">
-                <p>Місце виведення інформації для лабораторних робіт</p>
+                <button onclick="toggleDescription()">Опис предметного середовища</button>
+                <button onclick="showTopicDetails()">Тема Мета Місце розташування ЛР №1</button>
+                <button onclick="showTableCode()">HTML-код таблиць</button>
+                <button onclick="showListCode()">HTML-код списку</button>
+                <button onclick="showImage()">HTML-код зображення</button>
+                <button onclick="showConclusion()">Висновки</button>
+            </div>
+            <div class="output" id="output">
+                <p>Місце виведення інформації для Лабораторної роботи №1</p>
             </div>
         </div>
     </div>
+    <script src="js/lab1.js"></script>
 </body>
 </html>
+
 
