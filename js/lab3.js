@@ -31,3 +31,84 @@ function Task1() {
             <img src="./images/code2.jpg" alt="Placeholder Image" width="700">`
         ;
     }
+    function showFixedTable() {
+        var outputDiv = document.getElementById("output");
+        outputDiv.innerHTML = `
+        <a href="file:///C:/Users/20060/Desktop/web/zvit-document/lab3task2/fixedTable.html">фіксована таблична верстка</a>
+                `
+            ;
+        }
+    function showGumTable() {
+            var outputDiv = document.getElementById("output");
+            outputDiv.innerHTML = `
+            <a href="file:///C:/Users/20060/Desktop/web/zvit-document/lab3task2/GumTable.html">гумова таблична верстка</a>
+                    `
+                ;
+            }
+    function showFixedBlock() {
+                var outputDiv = document.getElementById("output");
+                outputDiv.innerHTML = `
+                <a href="file:///C:/Users/20060/Desktop/web/zvit-document/lab3task2/fixedBlock.html">фіксована блокова верстка</a>
+                        `
+                    ;
+                }
+    function showGumBlock() {
+            var outputDiv = document.getElementById("output");
+            outputDiv.innerHTML = `
+            <a href="file:///C:/Users/20060/Desktop/web/zvit-document/lab3task2/GumBlock.html">гумова блокова верстка</a>
+                    `
+                ;
+            }
+
+            function showScreenFlexbox() {
+                var outputDiv = document.getElementById("output");
+                outputDiv.innerHTML = `
+                
+                
+                <img src="./images/web1.jpg" alt="Placeholder Image" width="700">
+                <img src="./images/web2.jpg" alt="Placeholder Image" width="700">
+                <a href="file:///C:/Users/20060/Desktop/web/zvit-document/task%203/task3.html">веб-сторінка</a>
+                        `
+                    ;
+                }
+        function shoHTMLCodeFlexbox() {
+                    var outputDiv = document.getElementById("output");
+                    outputDiv.innerHTML = `
+                    
+                    
+                    <img src="./images/html1.jpg" alt="Placeholder Image" width="700">
+                    <img src="./images/html2.jpg" alt="Placeholder Image" width="700">
+                   
+                            `
+                        ;
+                    }
+
+                    function showCSSCodeFlexbox() {
+                        var outputDiv = document.getElementById("output");
+                        outputDiv.innerHTML = `
+                        
+                        
+                        <img src="./images/css1.jpg" alt="Placeholder Image" width="700">
+                        <img src="./images/csss2.jpg" alt="Placeholder Image" width="700">
+                       <img src="./images/css3.jpg" alt="Placeholder Image" width="700">
+                                `
+                            ;
+                        }
+         function showConclusion3() {
+                            var outputDiv = document.getElementById("output");
+                            var conclusion = `
+                                <p><strong>Висновок:</strong> Під час виконання ЛР №3 я придбала практичні навички роботи  верстки сторінок засобами CSS, верстки на основі плаваючих елементів, з’ясувала переваги та недоліки типів макетів веб-сторінок, придбала практичні навички роботи  верстки сторінок засобами CSS та FLEXBOX.    </p>
+                                <p> <b>Веб-додатки на основі таблиць: </b></p>
+                            <ul>
+                          <li> Переваги: простота, сумісність, легке вирівнювання.</li>
+                            <li> Недоліки: погана адаптивність, складність підтримки, несемантична структура.</li>
+
+                                <p><b> Веб-додатки на основі блоків:</b></p>
+
+                          <li>Переваги: гнучкість, адаптивність, сучасний дизайн.</li>
+                          <li>Недоліки: вимагають більше знань та часу на налаштування.</li>
+                          </ul>
+                                `
+                            ;
+                            outputDiv.innerHTML = conclusion;
+                        }             
