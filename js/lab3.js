@@ -7,8 +7,8 @@ function showDetails3() {
 </p>
 <p><strong>Місце розташування:</strong></p>
 <ul>
-    <li>Посилання на репозиторій лабораторної роботи №3: 
-        <a href="https://github.com/klynxlx/linnyk_lab2">https://github.com/klynxlx/linnyk_lab2</a>
+    <li>Посилання на завдання №3: 
+        <a href="file:///C:/Users/20060/Desktop/web/zvit-document/task%203/task3.html">file:///C:/Users/20060/Desktop/web/zvit-document/task%203/task3.html</a>
     </li>
     <li>Посилання на живу сторінку лабораторної роботи №3: 
         <a href="https://klynxlx.github.io/linnyk_lab2/">https://klynxlx.github.io/linnyk_lab2/</a>
