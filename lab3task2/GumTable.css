@@ -14,8 +14,8 @@ body {
 }
 
 .container {
-    width: 90%; /* Ширина контейнера адаптується до вікна */
-    max-width: 800px; /* Максимальна ширина */
+    width: 100%; /* Ширина контейнера адаптується до вікна */
+    
     background-color: #fff;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
     padding: 10px;

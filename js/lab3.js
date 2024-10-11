@@ -35,6 +35,7 @@ function Task1() {
         var outputDiv = document.getElementById("output");
         outputDiv.innerHTML = `
         <a href="file:///C:/Users/20060/Desktop/web/zvit-document/lab3task2/fixedTable.html">фіксована таблична верстка</a>
+        <img src="./images/Ftable.jpg" alt="Placeholder Image" width="700">
                 `
             ;
         }
@@ -42,6 +43,7 @@ function Task1() {
             var outputDiv = document.getElementById("output");
             outputDiv.innerHTML = `
             <a href="file:///C:/Users/20060/Desktop/web/zvit-document/lab3task2/GumTable.html">гумова таблична верстка</a>
+            <img src="./images/Gtable.jpg" alt="Placeholder Image" width="700">
                     `
                 ;
             }
@@ -49,6 +51,7 @@ function Task1() {
                 var outputDiv = document.getElementById("output");
                 outputDiv.innerHTML = `
                 <a href="file:///C:/Users/20060/Desktop/web/zvit-document/lab3task2/fixedBlock.html">фіксована блокова верстка</a>
+                <img src="./images/Fblock.jpg" alt="Placeholder Image" width="700">
                         `
                     ;
                 }
@@ -56,6 +59,7 @@ function Task1() {
             var outputDiv = document.getElementById("output");
             outputDiv.innerHTML = `
             <a href="file:///C:/Users/20060/Desktop/web/zvit-document/lab3task2/GumBlock.html">гумова блокова верстка</a>
+            <img src="./images/Gblock.jpg" alt="Placeholder Image" width="700">
                     `
                 ;
             }
