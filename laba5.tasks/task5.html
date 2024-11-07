@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-level Menu</title>
+    <style>
+        /* Основні стилі для горизонтального меню */
+        .menu {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background-color: #333;
+        }
+
+        /* Стилі для елементів меню */
+        .menu > li {
+            position: relative;
+        }
+        
+        .menu > li > a {
+            display: block;
+            padding: 15px 20px;
+            color: white;
+            text-decoration: none;
+            background-color: #333;
+        }
+
+        .menu > li > a:hover {
+            background-color: #555;
+        }
+
+        /* Вкладене вертикальне меню */
+        .submenu {
+            display: none;
+            position: absolute;
+            top: 100%; /* Розміщення під основним елементом */
+            left: 0;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background-color: #333;
+            min-width: 200px;
+        }
+
+        .submenu li a {
+            display: block;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .submenu li a:hover {
+            background-color: #555;
+        }
+
+        /* Відображення підменю при наведенні */
+        .menu > li:hover .submenu {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Горизонтальне багаторівневе меню -->
+<ul class="menu" id="menu"></ul>
+
+<script>
+    // Масив з пунктами меню та підменю
+    const menuItems = [
+        { name: "Home", link: "home.html" },
+        { name: "About", link: "about.html" },
+        {
+            name: "Services",
+            link: "#",
+            submenu: [
+                { name: "Web Development", link: "web-development.html" },
+                { name: "App Development", link: "app-development.html" },
+                { name: "Consulting", link: "consulting.html" }
+            ]
+        },
+        {
+            name: "Products",
+            link: "#",
+            submenu: [
+                { name: "E-commerce", link: "e-commerce.html" },
+                { name: "CRM", link: "crm.html" },
+                { name: "CMS", link: "cms.html" }
+            ]
+        },
+        { name: "Contact", link: "contact.html" }
+    ];
+
+    // Функція для генерації меню на основі масиву
+    function generateMenu(menuArray) {
+        const menu = document.getElementById("menu");
+
+        menuArray.forEach(item => {
+            const menuItem = document.createElement("li");
+
+            // Створення основного посилання
+            const link = document.createElement("a");
+            link.href = item.link;
+            link.textContent = item.name;
+            menuItem.appendChild(link);
+
+            // Перевірка на наявність підменю
+            if (item.submenu) {
+                const submenu = document.createElement("ul");
+                submenu.classList.add("submenu");
+
+                item.submenu.forEach(subItem => {
+                    const subMenuItem = document.createElement("li");
+                    const subLink = document.createElement("a");
+                    subLink.href = subItem.link;
+                    subLink.textContent = subItem.name;
+                    subMenuItem.appendChild(subLink);
+                    submenu.appendChild(subMenuItem);
+                });
+
+                menuItem.appendChild(submenu);
+            }
+
+            menu.appendChild(menuItem);
+        });
+    }
+
+    // Виклик функції для генерації меню
+    generateMenu(menuItems);
+</script>
+
+</body>
+</html>
