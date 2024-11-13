@@ -24,21 +24,24 @@ function showDetails5() {
 function Task1() {
     var outputDiv = document.getElementById("output");
     outputDiv.innerHTML = `
-            <img src="./images/task1.jpg" alt="Placeholder Image" width="700">`
+            <img src="./images/task1.jpg" alt="Placeholder Image" width="700">
+            <img src="./images/photo1.jpg" alt="Placeholder Image" width="700">`
 
         ;
     }
 function Task2() {
     var outputDiv = document.getElementById("output");
     outputDiv.innerHTML = `
-            <img src="./images/task2.jpg" alt="Placeholder Image" width="700">`
+            <img src="./images/task2.jpg" alt="Placeholder Image" width="700">
+            <img src="./images/photo2.jpg" alt="Placeholder Image" width="700">`
             
         ;
     }
     function Task3() {
         var outputDiv = document.getElementById("output");
         outputDiv.innerHTML = `
-                <img src="./images/task3.jpg" alt="Placeholder Image" width="700">`
+                <img src="./images/task3.jpg" alt="Placeholder Image" width="700">
+                <img src="./images/photo3.jpg" alt="Placeholder Image" width="700">`
                 
             ;
         }
@@ -46,14 +49,22 @@ function Task2() {
             var outputDiv = document.getElementById("output");
             outputDiv.innerHTML = `
                     <img src="./images/task4.1.jpg" alt="Placeholder Image" width="700">
-                    <img src="./images/task4.2.jpg" alt="Placeholder Image" width="700">`
+                    <img src="./images/task4.2.jpg" alt="Placeholder Image" width="700">
+                    <img src="./images/photo4.jpg" alt="Placeholder Image" width="700">`
                 ;
             }
-
+            function Task5() {
+                var outputDiv = document.getElementById("output");
+                outputDiv.innerHTML = `
+                        <img src="./images/task5.jpg" alt="Placeholder Image" width="700">
+                    
+                        <img src="./images/photo5.jpg" alt="Placeholder Image" width="700">`
+                    ;
+                }
             function showConclusion5() {
                 var outputDiv = document.getElementById("output");
                 var conclusion = `
-                    <p><strong>Висновок:</strong> Під час виконання ЛР №2 я придбала практичні навички роботи з конструкціями мови JS, масивами та функціями у js-сценаріях. Також реалізувала програми засовами мови JAVASCRIPT</p>`
+                    <p><strong>Висновок:</strong> Під час виконання ЛР №5 я придбала практичні навички роботи з конструкціями мови JS, масивами та функціями у js-сценаріях. Також реалізувала програми засовами мови JAVASCRIPT</p>`
                 ;
                 outputDiv.innerHTML = conclusion;
             }      
