@@ -1,4 +1,4 @@
-function showDetails5() {
+function showDetails6() {
     var outputDiv = document.getElementById("output");
     outputDiv.innerHTML = `
 <p><strong>Тема:</strong> ОБ'ЄКТ. МЕТОДИ ОБ'ЄКТА. МАСИВ ОБ'ЄКТІВ. ДЕСТРУКТУРИЗАЦІЯ ОБ'ЄКТІВ. CALLBACK. СТРІЛОЧНІ ФУНКЦІЇ. СТРІЛОЧНІ ФУНКЦІЇ ЯК КОЛБЕКИ.</p>
