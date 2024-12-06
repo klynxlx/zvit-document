@@ -50,3 +50,9 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+.box {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    background-color: random;
+}
